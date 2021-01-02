@@ -3,8 +3,8 @@ name: Push Latest/Nightly
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    # run at 00:00 m-f (which is about 4pm pacific)
-    - cron:  '0 0 * * 1-5'
+    # run at 00:03 (which is about 4pm pacific)
+    - cron:  '3 0 * * 0'
 
 jobs:
   push_latest:
