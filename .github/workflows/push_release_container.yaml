@@ -13,5 +13,6 @@ jobs:
         run: docker build . -t chrisjohnson00/solaredge-prometheus-exporter:${GITHUB_REF##*/}
       - name: Login to docker hub
         run: docker login --username=chrisjohnson00 --password=${{ secrets.DOCKER_HUB_PASSWORD }}
-      - name: Push the Docker image
-        run: docker push chrisjohnson00/solaredge-prometheus-exporter:${GITHUB_REF##*/}
+#     This should really tag with the version of qbittorent, so until I figure out the logic to get that... not going to push tags
+#      - name: Push the Docker image
+#        run: docker push chrisjohnson00/solaredge-prometheus-exporter:${GITHUB_REF##*/}

@@ -39,5 +39,5 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         rulesLocation: '.github/herald_rule_*.json'
-        base: master
+        base: main
         DEBUG: "*"
