@@ -25,3 +25,19 @@ jobs:
       run: |
         docker buildx build --tag chrisjohnson00/qbittorrent-openvpn:latest \
           --push --platform  linux/arm/v7,linux/arm64/v8,linux/amd64 .
+    - name: 'Get Qbittorrent version from container'
+      id: 'qbittorrent'
+      run: |
+        output=$(docker run chrisjohnson00/qbittorrent-openvpn:latest apt list | grep qbittorrent | grep -Eo "[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+" | head -1)
+        echo "::set-output name=version::$(echo $output)"
+    - name: 'Display QBittorrent Version'
+      run: |
+        echo $VERSION
+      env:
+        VERSION: '${{ steps.qbittorrent.outputs.version }}'
+    - name: 'Tag/Push with qbittorrent version'
+      run: |
+        docker tag chrisjohnson00/qbittorrent-openvpn:latest chrisjohnson00/qbittorrent-openvpn:$VERSION
+        docker push chrisjohnson00/qbittorrent-openvpn:$VERSION
+      env:
+        VERSION: '${{ steps.qbittorrent.outputs.version }}'
