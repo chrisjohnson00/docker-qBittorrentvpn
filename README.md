@@ -1,14 +1,28 @@
 [preview]: https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/qbittorrentvpn/Screenshot.png "qBittorrent Preview"
 
 # qBittorrent with WebUI and OpenVPN
-Docker container which runs the latest headless qBittorrent client with WebUI while connecting to OpenVPN with iptables killswitch to prevent IP leakage when the tunnel goes down. This is an automated build linked with Ubuntu.
+A Docker container which runs the latest headless qBittorrent client with WebUI while connecting to OpenVPN with 
+iptables killswitch to prevent IP leakage when the tunnel goes down. This is an automated build linked with Ubuntu.
+
+# Fork You!
+This is a fork repo that I maintain personally.  
+
+What you get from this that you don't get from the original fork is:
+ - Multi architecture support
+ - Nightly builds which push latest tags and for those of you that want specific versions, version tags!
+
+What you don't get:
+ - I use this for stuff, pretty much for fun, so I will provide support on my time, when I feel like it (wife allowing).
+   That said... file an issue and I'll help, if/when I can.  I'll be blunt and tell you to bugger off if I can't or don't
+   want to help you!
+
 
 ![alt text][preview]
 
 ## Docker Features
-* Base: Ubuntu 18.04
+* Base: Ubuntu 20.04
 * Latest qBittorrent
-* Size: 403MB
+* Size: about 100mb
 * Selectively enable or disable OpenVPN support
 * IP tables kill switch to prevent IP leaking when VPN connection fails
 * Specify name servers to add to container
@@ -29,7 +43,7 @@ $ docker run --privileged  -d \
               -p 8080:8080 \
               -p 8999:8999 \
               -p 8999:8999/udp \
-              markusmcnugen/qbittorrentvpn
+              chrisjohnson00/qbittorrent-openvpn
 ```
 
 # Variables, Volumes, and Ports

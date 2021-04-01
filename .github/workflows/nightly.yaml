@@ -28,7 +28,7 @@ jobs:
     - name: 'Get Qbittorrent version from container'
       id: 'qbittorrent'
       run: |
-        output=$(docker run chrisjohnson00/qbittorrent-openvpn:latest apt list | grep qbittorrent | grep -Eo "[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+" | head -1)
+        output=$(docker run chrisjohnson00/qbittorrent-openvpn:latest qbittorrent-nox -v | grep -Eo "v(.*)")
         echo "::set-output name=version::$(echo $output)"
     - name: 'Display QBittorrent Version'
       run: |
