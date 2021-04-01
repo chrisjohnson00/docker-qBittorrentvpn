@@ -10,7 +10,7 @@ on:
 jobs:
   check-pr-title:
     name: PR Title
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
     - name: Install Dependencies
@@ -20,7 +20,7 @@ jobs:
     - uses: JulienKode/pull-request-name-linter-action@v0.2.0
   check-pr-commits:
     name: PR Commit Messages
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with:
@@ -31,7 +31,7 @@ jobs:
       - uses: wagoid/commitlint-github-action@v3.0.1
   apply-labels:
     name: PR Labels
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
     - name: Apply Herald rules

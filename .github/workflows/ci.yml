@@ -7,7 +7,7 @@ on:
 jobs:
   container_build:
     name: Build and Push Docker Container
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
     - name: Set up QEMU
@@ -16,24 +16,67 @@ jobs:
         platforms: all
     - name: Set up Docker Buildx
       id: buildx
-      uses: docker/setup-buildx-action@master
-    - name: Login to docker hub
-      run: docker login --username=chrisjohnson00 --password=${{ secrets.DOCKER_HUB_PASSWORD }}
-    - name: Build the Docker image
+      uses: docker/setup-buildx-action@v1
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: chrisjohnson00
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+    - name: Determine container tag
       run: |
-        docker buildx build --tag chrisjohnson00/qbittorrent-openvpn:${GITHUB_REF##*/} \
-          --push --platform  linux/arm/v7,linux/arm64/v8,linux/amd64 .
+          if [[ $GITHUB_REF == refs/heads/* ]]; then
+            VERSION=${GITHUB_REF#refs/heads/}
+            if [[ $VERSION == main ]]; then
+              VERSION=latest
+            fi
+          fi
+          echo ::set-output name=container_tag::${VERSION}
+      id: prep
+    - name: Cache Docker layers
+      uses: actions/cache@v2.1.4
+      with:
+        path: /tmp/.buildx-cache
+        key: ${{ runner.os }}-buildx-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-buildx-${{ steps.prep.outputs.container_tag }}-
+          ${{ runner.os }}-buildx-
+    - name: Build and push
+      id: docker_build
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: |
+          chrisjohnson00/qbittorrent-openvpn:${{ steps.prep.outputs.container_tag }}
+        platforms: linux/arm/v7,linux/arm64/v8,linux/amd64
+        cache-from: type=local,src=/tmp/.buildx-cache
+        cache-to: type=local,dest=/tmp/.buildx-cache
+        labels: |
+          org.opencontainers.image.documentation=https://github.com/chrisjohnson00/docker-qBittorrentvpn
+          org.opencontainers.image.version=${{ steps.prep.outputs.container_tag }}
+          org.opencontainers.image.source=https://github.com/chrisjohnson00/docker-qBittorrentvpn
+          org.opencontainers.image.revision=${{ github.sha }}
+    - name: Get Qbittorrent version from container
+      id: qbittorrent
+      run: |
+        output=$(docker run chrisjohnson00/qbittorrent-openvpn:${{ steps.prep.outputs.container_tag }} qbittorrent-nox -v | grep -Eo "v(.*)")
+        echo "::set-output name=version::$(echo $output)"
+    - name: Display QBittorrent Version
+      run: |
+        echo $VERSION
+      env:
+        VERSION: ${{ steps.qbittorrent.outputs.version }}
   actionslint:
-    name: 'Actions Yaml Lint'
-    runs-on: ubuntu-18.04
+    name: Actions Yaml Lint
+    runs-on: ubuntu-20.04
     steps:
-      - name: 'Checkout'
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: 'Actions Yaml Lint'
+      - name: Actions Yaml Lint
         uses: karancode/yamllint-github-action@v2.0.0
         with:
-          yamllint_file_or_dir: '.github/workflows'
+          yamllint_file_or_dir: .github/workflows
           yamllint_comment: true
-          yamllint_config_filepath: '.yamllint'
+          yamllint_config_filepath: .yamllint
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
