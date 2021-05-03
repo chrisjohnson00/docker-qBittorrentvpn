@@ -24,7 +24,7 @@ jobs:
           release_branches: main
           default_bump: patch
       - name: Generate incremental changelog
-        uses: charmixer/auto-changelog-action@v1.2
+        uses: charmixer/auto-changelog-action@v1.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release_branch: main
@@ -44,7 +44,7 @@ jobs:
           release_name: ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.changelog.outputs.content }}
       - name: Generate changelog
-        uses: charmixer/auto-changelog-action@v1.2
+        uses: charmixer/auto-changelog-action@v1.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release_branch: main
