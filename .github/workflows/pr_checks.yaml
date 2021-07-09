@@ -16,7 +16,7 @@ jobs:
     - name: Install Dependencies
       run: |
         npm install @commitlint/config-conventional
-        echo "module.exports = {extends: ['@commitlint/config-conventional'], rules: { 'subject-case': [2, 'always', ['sentence-case','lower-case', 'start-case']], 'header-max-length': [2, 'always', 120], 'body-max-line-length': [0, 'always', 120] }};" > commitlint.config.js
+        echo "module.exports = {extends: ['@commitlint/config-conventional'], rules: { 'subject-case': [0, 'always', ['sentence-case','lower-case', 'start-case']], 'header-max-length': [2, 'always', 120], 'body-max-line-length': [0, 'always', 120] }};" > commitlint.config.js
     - uses: JulienKode/pull-request-name-linter-action@v0.2.0
   check-pr-commits:
     name: PR Commit Messages
@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
       - name: Configure commit lint
         run: |
-          echo "module.exports = {extends: ['@commitlint/config-conventional'], rules: { 'subject-case': [2, 'always', ['sentence-case','lower-case', 'start-case']], 'header-max-length': [2, 'always', 120], 'body-max-line-length': [0, 'always', 120] }};" > commitlint.config.js
+          echo "module.exports = {extends: ['@commitlint/config-conventional'], rules: { 'subject-case': [0, 'always', ['sentence-case','lower-case', 'start-case']], 'header-max-length': [2, 'always', 120], 'body-max-line-length': [0, 'always', 120] }};" > commitlint.config.js
       - uses: wagoid/commitlint-github-action@v3.1.3
   apply-labels:
     name: PR Labels
