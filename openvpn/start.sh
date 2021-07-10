@@ -164,6 +164,8 @@ fi
 if [[ $VPN_ENABLED == "yes" ]]; then
 	echo "[info] Starting OpenVPN..." | ts '%Y-%m-%d %H:%M:%.S'
 	cd /config/openvpn
+	# debugging
+	echo "[debug] VPN_CONFIG=${VPN_CONFIG}"
 	exec openvpn --config ${VPN_CONFIG} &
 	# give openvpn some time to connect
 	sleep 5
