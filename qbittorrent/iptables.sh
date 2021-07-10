@@ -9,6 +9,7 @@ while : ; do
 	if [[ ! -z "${tunnelstat}" ]]; then
 		break
 	else
+	  echo "[info] Tunnel is not up, retrying"
 		sleep 1
 	fi
 done
