@@ -2,7 +2,7 @@
 #
 # Version 1.8
 
-FROM ubuntu:20.04
+FROM ubuntu:21.10
 MAINTAINER MarkusMcNugen
 
 VOLUME /downloads
