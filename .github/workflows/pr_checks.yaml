@@ -17,7 +17,7 @@ jobs:
       run: |
         npm install @commitlint/config-conventional
         echo "module.exports = {extends: ['@commitlint/config-conventional'], rules: { 'subject-case': [0, 'always', ['sentence-case','lower-case', 'start-case']], 'header-max-length': [2, 'always', 120], 'body-max-line-length': [0, 'always', 120] }};" > commitlint.config.js
-    - uses: JulienKode/pull-request-name-linter-action@v0.4.0
+    - uses: JulienKode/pull-request-name-linter-action@v0.5.0
   check-pr-commits:
     name: PR Commit Messages
     runs-on: ubuntu-20.04
