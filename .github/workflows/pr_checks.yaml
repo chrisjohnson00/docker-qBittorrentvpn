@@ -12,7 +12,7 @@ jobs:
     name: PR Title
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.1.0
     - name: Install Dependencies
       run: |
         npm install @commitlint/config-conventional
@@ -22,7 +22,7 @@ jobs:
     name: PR Commit Messages
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
       - name: Configure commit lint
@@ -33,7 +33,7 @@ jobs:
     name: PR Labels
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.1.0
     - name: Apply Herald rules
       uses: gagoar/use-herald-action@v2.3.0
       with:
