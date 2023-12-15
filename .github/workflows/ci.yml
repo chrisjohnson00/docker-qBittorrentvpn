@@ -9,7 +9,7 @@ jobs:
     name: Build and Push Docker Container
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up QEMU
       uses: docker/setup-qemu-action@master
       with:
@@ -71,7 +71,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Actions Yaml Lint
         uses: karancode/yamllint-github-action@v2.0.0
         with:
