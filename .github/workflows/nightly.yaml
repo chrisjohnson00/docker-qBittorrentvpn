@@ -25,7 +25,7 @@ jobs:
         username: chrisjohnson00
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
     - name: Build and push
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v5
       with:
         context: .
         push: true
@@ -47,7 +47,7 @@ jobs:
       env:
         VERSION: ${{ steps.qbittorrent.outputs.version }}
     - name: Build and push
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v5
       with:
         context: .
         push: true
