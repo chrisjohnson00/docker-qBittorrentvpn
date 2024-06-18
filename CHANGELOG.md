@@ -1,5 +1,16 @@
 # Changelog
 
+## [v1.9.9](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.9) (2024-06-18)
+
+[Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.8...v1.9.9)
+
+**Merged pull requests:**
+
+- chore: bump actions/cache from 4.0.1 to 4.0.2 [\#106](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/106) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore: bump mathieudutour/github-tag-action from 6.0 to 6.1 [\#104](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/104) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore: bump WyriHaximus/github-action-get-previous-tag from 1.1 to 1.4 [\#103](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/103) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore: bump stefanzweifel/git-auto-commit-action from 4 to 5 [\#100](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/100) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.9.8](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.8) (2024-03-03)
 
 [Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.7...v1.9.8)
