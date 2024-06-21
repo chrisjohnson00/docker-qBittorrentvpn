@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.9.10](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.10) (2024-06-21)
+
+[Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.9...v1.9.10)
+
+**Merged pull requests:**
+
+- chore: bump ubuntu from 20.04 to 24.04 [\#111](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/111) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v1.9.9](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.9) (2024-06-18)
 
 [Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.8...v1.9.9)
