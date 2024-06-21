@@ -20,8 +20,9 @@ What you don't get:
 ![alt text][preview]
 
 ## Docker Features
-* Base: Ubuntu 20.04
-* Latest qBittorrent
+* Base: Ubuntu 24.04
+* AMD64, ARM64, ARMv7
+* Latest qBittorrent available for Ubuntu 24.04
 * Size: about 100mb
 * Selectively enable or disable OpenVPN support
 * IP tables kill switch to prevent IP leaking when VPN connection fails
