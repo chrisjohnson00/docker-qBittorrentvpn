@@ -10,17 +10,23 @@ on:
 jobs:
   check-pr-title:
     name: PR Title
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Install Dependencies
-      run: |
-        npm install @commitlint/config-conventional
-        echo "module.exports = {extends: ['@commitlint/config-conventional'], rules: { 'subject-case': [0, 'always', ['sentence-case','lower-case', 'start-case']], 'header-max-length': [2, 'always', 120], 'body-max-line-length': [0, 'always', 120] }};" > commitlint.config.js
-    - uses: JulienKode/pull-request-name-linter-action@v0.5.0
+      - uses: actions/checkout@v4
+      - name: Install Dependencies
+        # yamllint disable rule:line-length
+        run: |
+          npm install @commitlint/config-conventional
+          echo "module.exports = {extends: ['@commitlint/config-conventional'], rules: { 'subject-case': [0,'always',['sentence-case']],'header-max-length': [2, 'always', 120], 'body-max-line-length': [0, 'always', 120] }};" > commitlint.config.js
+        # yamllint enable rule:line-length
+      - name: Lint the PR Title
+        run: |
+          echo "${PR_TITLE}" | npx --yes commitlint
+        env:
+          PR_TITLE: '${{ github.event.pull_request.title }}'
   check-pr-commits:
     name: PR Commit Messages
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,7 +37,7 @@ jobs:
       - uses: wagoid/commitlint-github-action@v5.4.5
   apply-labels:
     name: PR Labels
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Apply Herald rules
