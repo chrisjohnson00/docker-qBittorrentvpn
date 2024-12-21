@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.9.11](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.11) (2024-12-21)
+
+[Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.10...v1.9.11)
+
+**Closed issues:**
+
+- Upgrade Qbt source to 4.4 branch [\#58](https://github.com/chrisjohnson00/docker-qBittorrentvpn/issues/58)
+
+**Merged pull requests:**
+
+- chore: bump actions/cache from 4.0.2 to 4.1.2 [\#117](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/117) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.9.10](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.10) (2024-06-21)
 
 [Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.9...v1.9.10)
@@ -48,7 +60,6 @@
 
 - Manifest for Kubernetes [\#98](https://github.com/chrisjohnson00/docker-qBittorrentvpn/issues/98)
 - can't open the web ui in portainer [\#84](https://github.com/chrisjohnson00/docker-qBittorrentvpn/issues/84)
-- Upgrade Qbt source to 4.4 branch [\#58](https://github.com/chrisjohnson00/docker-qBittorrentvpn/issues/58)
 
 **Merged pull requests:**
 
