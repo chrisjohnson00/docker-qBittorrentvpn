@@ -34,7 +34,7 @@ jobs:
       - name: Configure commit lint
         run: |
           echo "module.exports = {extends: ['@commitlint/config-conventional'], rules: { 'subject-case': [0, 'always', ['sentence-case','lower-case', 'start-case']], 'header-max-length': [2, 'always', 120], 'body-max-line-length': [0, 'always', 120] }};" > commitlint.config.js
-      - uses: wagoid/commitlint-github-action@v5.4.5
+      - uses: wagoid/commitlint-github-action@v6.2.1
   apply-labels:
     name: PR Labels
     runs-on: ubuntu-latest
