@@ -146,8 +146,13 @@ for name_server_item in "${name_server_list[@]}"; do
 	# strip whitespace from start and end of lan_network_item
 	name_server_item=$(echo "${name_server_item}" | sed -e 's~^[ \t]*~~;s~[ \t]*$~~')
 
-	echo "[info] Adding ${name_server_item} to resolv.conf" | ts '%Y-%m-%d %H:%M:%.S'
-	echo "nameserver ${name_server_item}" >> /etc/resolv.conf
+	if grep -Fxq "${name_server_item}" /etc/resolv.conf
+	then
+		echo "[info] ${name_server_item} already in resolv.conf" | ts '%Y-%m-%d %H:%M:%.S'
+	else
+		echo "[info] Adding ${name_server_item} to resolv.conf" | ts '%Y-%m-%d %H:%M:%.S'
+		echo "nameserver ${name_server_item}" >> /etc/resolv.conf
+	fi
 
 done
 
