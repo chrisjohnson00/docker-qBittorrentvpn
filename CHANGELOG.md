@@ -1,5 +1,20 @@
 # Changelog
 
+## [v1.9.14](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.14) (2025-08-12)
+
+[Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.13...v1.9.14)
+
+**Closed issues:**
+
+- Default Credentials not working [\#129](https://github.com/chrisjohnson00/docker-qBittorrentvpn/issues/129)
+- All downloads gets stalled or don't get past downloading metadata [\#125](https://github.com/chrisjohnson00/docker-qBittorrentvpn/issues/125)
+
+**Merged pull requests:**
+
+- ci: update actions and runners to the latest [\#132](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/132) ([chrisjohnson00](https://github.com/chrisjohnson00))
+- Update start.sh to prevent duplicate name servers in /etc/resolv.conf [\#127](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/127) ([Moreless91](https://github.com/Moreless91))
+- Timezone and Locales configuration [\#126](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/126) ([Moreless91](https://github.com/Moreless91))
+
 ## [v1.9.13](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.13) (2025-03-25)
 
 [Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.12...v1.9.13)
