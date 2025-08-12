@@ -8,11 +8,11 @@ on:
 
 jobs:
   create_release:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     name: Create Release
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Get Latest Tag
@@ -20,7 +20,7 @@ jobs:
         uses: WyriHaximus/github-action-get-previous-tag@v1.4
       - name: Bump version and push tag
         id: tag_version
-        uses: mathieudutour/github-tag-action@v6.1
+        uses: mathieudutour/github-tag-action@v6.2
         with:
           github_token: ${{ secrets.PAT_REPO_ONLY }}
           release_branches: main
@@ -50,7 +50,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release_branch: main
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "chore: Generating CHANGELOG.md for ${{ steps.tag_version.outputs.new_tag }}"
           file_pattern: CHANGELOG.md

@@ -7,9 +7,9 @@ on:
 jobs:
   container_build:
     name: Build and Push Docker Container
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Set up QEMU
       uses: docker/setup-qemu-action@master
       with:
@@ -33,7 +33,7 @@ jobs:
           echo ::set-output name=container_tag::${VERSION}
       id: prep
     - name: Cache Docker layers
-      uses: actions/cache@v4.2.3
+      uses: actions/cache@v4.2.4
       with:
         path: /tmp/.buildx-cache
         key: ${{ runner.os }}-buildx-${{ github.sha }}
@@ -42,7 +42,7 @@ jobs:
           ${{ runner.os }}-buildx-
     - name: Build and push
       id: docker_build
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       with:
         context: .
         push: true
@@ -68,12 +68,12 @@ jobs:
         VERSION: ${{ steps.qbittorrent.outputs.version }}
   actionslint:
     name: Actions Yaml Lint
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Actions Yaml Lint
-        uses: karancode/yamllint-github-action@v2.1.1
+        uses: karancode/yamllint-github-action@v3.0.0
         with:
           yamllint_file_or_dir: .github/workflows
           yamllint_comment: true

@@ -9,9 +9,9 @@ on:
 jobs:
   push_latest:
     name: Build and Push Docker Container
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Set up QEMU
       uses: docker/setup-qemu-action@master
       with:
@@ -25,7 +25,7 @@ jobs:
         username: chrisjohnson00
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
     - name: Build and push
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       with:
         context: .
         push: true
@@ -47,7 +47,7 @@ jobs:
       env:
         VERSION: ${{ steps.qbittorrent.outputs.version }}
     - name: Build and push
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       with:
         context: .
         push: true

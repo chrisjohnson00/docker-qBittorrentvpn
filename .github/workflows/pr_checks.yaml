@@ -12,7 +12,7 @@ jobs:
     name: PR Title
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install Dependencies
         # yamllint disable rule:line-length
         run: |
@@ -28,18 +28,29 @@ jobs:
     name: PR Commit Messages
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Configure commit lint
+        # yamllint disable rule:line-length
         run: |
-          echo "module.exports = {extends: ['@commitlint/config-conventional'], rules: { 'subject-case': [0, 'always', ['sentence-case','lower-case', 'start-case']], 'header-max-length': [2, 'always', 120], 'body-max-line-length': [0, 'always', 120] }};" > commitlint.config.js
-      - uses: wagoid/commitlint-github-action@v5.4.5
+          echo "
+            export default {
+                extends: ['@commitlint/config-conventional'],
+                rules: {
+                    'subject-case': [0,'always',['sentence-case']],
+                    'header-max-length': [2, 'always', 120],
+                    'body-max-line-length': [0, 'always', 120],
+                    'footer-max-line-length': [0, 'always', 120]
+                }
+            };
+          " > commitlint.config.mjs
+      - uses: wagoid/commitlint-github-action@v6.2.1
   apply-labels:
     name: PR Labels
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Apply Herald rules
       uses: gagoar/use-herald-action@v2.3.0
       with:
