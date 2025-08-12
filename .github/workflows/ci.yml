@@ -7,7 +7,7 @@ on:
 jobs:
   container_build:
     name: Build and Push Docker Container
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v5
     - name: Set up QEMU
@@ -68,7 +68,7 @@ jobs:
         VERSION: ${{ steps.qbittorrent.outputs.version }}
   actionslint:
     name: Actions Yaml Lint
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v5
