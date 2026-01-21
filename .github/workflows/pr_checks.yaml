@@ -12,7 +12,7 @@ jobs:
     name: PR Title
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Install Dependencies
         # yamllint disable rule:line-length
         run: |
@@ -28,7 +28,7 @@ jobs:
     name: PR Commit Messages
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Configure commit lint
@@ -50,7 +50,7 @@ jobs:
     name: PR Labels
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - name: Apply Herald rules
       uses: gagoar/use-herald-action@v2.3.0
       with:
