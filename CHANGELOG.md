@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.9.16](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.16) (2026-02-03)
+
+[Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.15...v1.9.16)
+
+**Merged pull requests:**
+
+- chore: bump actions/cache from 5.0.2 to 5.0.3 [\#138](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/138) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.9.15](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.15) (2026-01-20)
 
 [Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.14...v1.9.15)
