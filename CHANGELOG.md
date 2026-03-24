@@ -1,5 +1,28 @@
 # Changelog
 
+## [v1.9.18](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.18) (2026-03-24)
+
+[Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.17...v1.9.18)
+
+**Merged pull requests:**
+
+- chore: bump docker/setup-buildx-action from 3 to 4 [\#142](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/142) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v1.9.17](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.17) (2026-03-24)
+
+[Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.16...v1.9.17)
+
+**Merged pull requests:**
+
+- chore: bump actions/cache from 5.0.3 to 5.0.4 [\#143](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/143) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore: bump docker/build-push-action from 6 to 7 [\#141](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/141) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore: bump docker/login-action from 3 to 4 [\#140](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/140) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore: bump WyriHaximus/github-action-get-previous-tag from 1.4 to 2.0 [\#139](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/139) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore: bump actions/checkout from 5 to 6 [\#135](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/135) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore: bump stefanzweifel/git-auto-commit-action from 6 to 7 [\#134](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/134) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore: bump karancode/yamllint-github-action from 2.1.1 to 3.0.0 [\#120](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/120) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore: bump mathieudutour/github-tag-action from 6.1 to 6.2 [\#105](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/105) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.9.16](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.16) (2026-02-03)
 
 [Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.15...v1.9.16)
