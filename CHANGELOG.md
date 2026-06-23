@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.9.19](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.19) (2026-06-23)
+
+[Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.18...v1.9.19)
+
+**Merged pull requests:**
+
+- chore: bump actions/checkout from 6 to 7 [\#146](https://github.com/chrisjohnson00/docker-qBittorrentvpn/pull/146) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.9.18](https://github.com/chrisjohnson00/docker-qBittorrentvpn/tree/v1.9.18) (2026-03-24)
 
 [Full Changelog](https://github.com/chrisjohnson00/docker-qBittorrentvpn/compare/v1.9.17...v1.9.18)
